@@ -12,6 +12,7 @@
             width: 100%;
             @include univerzalni-flex-display(initial, center);
             flex-direction: column;
+            margin-bottom: 1rem;
 
             &::after{
                 content: "";
