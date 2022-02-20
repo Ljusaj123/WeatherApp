@@ -1,0 +1,65 @@
+.card-container{
+    width: 45vw;
+    height: 400px; //popraviti za responzivnost
+    @include univerzalni-flex-display(center, center);
+    border-radius: 15px;
+    background: $card-background;
+    margin-bottom: 3rem;
+
+
+    & .image-container{
+        height: 100%;
+        width: 30%;
+
+        & img{
+            border-radius: 15px;
+            height: 100%;
+            width: 100%;           
+        }
+
+    }
+    & .text-container{
+        width: 70%;
+        height: 100%;
+        padding: 1rem;
+        @include univerzalni-flex-display(space-between, center);
+        flex-direction: column;
+        position: relative;
+
+        & .close-container{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: rgba(218, 131, 131, 0.8);
+
+        }
+
+
+        & .city-info{
+            width: 100%;
+            @include univerzalni-flex-display(center,center);
+            flex-direction: column;
+            border-bottom: 1px solid $primary-font-color;
+            
+            & h2, & h4{
+                margin-bottom: 1rem;
+
+            }
+        }
+
+        & .weather-container{
+            width: 100%;
+            padding: 1rem;
+        }
+
+        & .weather-info-container{
+            width: 100%;
+            margin-bottom: 2rem;
+            @include univerzalni-flex-display(space-between, center);
+            
+        }
+    }
+
+}
