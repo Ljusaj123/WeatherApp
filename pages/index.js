@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../components/weather-card";
 
 export default function Home() {
 
@@ -21,7 +22,8 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="weather-container"></div>
+        <div className="weather-container">
+        </div>
       
 
       </div>
