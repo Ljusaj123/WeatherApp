@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+$primary-background-color: rgb(28, 30, 39);
+$primary-font-color: rgba(173, 190, 209, 0.849);
+
+body{
+    background: $primary-background-color;
+    font-family: 'Libre Baskerville', serif;
+    color: $primary-font-color;
+}
+
+
+@mixin univerzalni-flex-display($justify-content, $align-items){
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
