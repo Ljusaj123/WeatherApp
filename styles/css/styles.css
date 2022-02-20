@@ -1,3 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+body {
+  background: #1c1e27;
+  font-family: 'Libre Baskerville', serif;
+  color: rgba(173, 190, 209, 0.849);
+}
+
+.app {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-container .info-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.app-container .info-container::after {
+  content: "";
+  width: clamp(70%, 80vw, 100%);
+  height: 1px;
+  background: rgba(173, 190, 209, 0.849);
+  opacity: 0.3;
+}
+
+.app-container .info-container .title-container {
+  width: 100%;
+  margin-bottom: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.app-container .info-container .title-container h1 {
+  font-size: clamp(2.2rem, 6.5vw, 4.5rem);
+  margin-bottom: 2rem;
+}
+
+.app-container .info-container .title-container h3 {
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
+}
+
+.app-container .info-container .input-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 4rem;
+}
+
+.app-container .info-container .input-container input {
+  padding: 0.2rem;
+  width: clamp(200px, 60vw, 300px);
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(173, 190, 209, 0.849);
+  border-radius: 5px;
+  background: none;
+  background: rgba(45, 45, 71, 0.548);
+  color: rgba(173, 190, 209, 0.849);
+  font-size: clamp(0.8rem, 3.5vw, 1rem);
+  line-height: 2.5rem;
+}
+
+.app-container .info-container .input-container input::-webkit-input-placeholder {
+  color: rgba(173, 190, 209, 0.849);
+}
+
+.app-container .info-container .input-container input:-ms-input-placeholder {
+  color: rgba(173, 190, 209, 0.849);
+}
+
+.app-container .info-container .input-container input::-ms-input-placeholder {
+  color: rgba(173, 190, 209, 0.849);
+}
+
+.app-container .info-container .input-container input::placeholder {
+  color: rgba(173, 190, 209, 0.849);
+}
+
+.app-container .info-container .input-container [placeholder]::-webkit-input-placeholder {
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.app-container .info-container .input-container [placeholder]:focus::-webkit-input-placeholder {
+  color: transparent;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -8,6 +8,24 @@ export default function Home() {
   }
   return (
     <div className="app">
+      <div className="app-container">
+        <div className="info-container">
+          <div className="title-container">
+            <h1>Weather App</h1>
+            <h3>Find out the weather in any city </h3>
+          </div>
+          <div className="input-container">
+            <input 
+              type="text" 
+              placeholder="Search town..." 
+            />
+          </div>
+        </div>
+        <div className="weather-container"></div>
+      
+
+      </div>
+      
       
     </div>
   )
