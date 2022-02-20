@@ -1,55 +1,63 @@
-import Image from "next/image";
-import React, {useEffect, useState} from "react";
 import {MdOutlineClose} from 'react-icons/md';
 
-const Card =(props)=>{
+const Card =(weather)=>{
 
+    const dateBuilder = (d) => {
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+        let day = days[d.getDay()];
+        let date = d.getDate();
+        let month = months[d.getMonth()];
+        let year = d.getFullYear();
+    
+        return `${day} ${date} ${month} ${year}`
+      }
 
-    const [cold,setCold]= useState(true);
+      const removeCard=(e)=>{
+          const card=e.target.parentElement.parentElement;
+          card.remove();
 
+      }
 
-    useEffect(()=>{
-        if(props.props.temp>=16){
-            setCold(false);
-        }else{
-            setCold(true);
-        }
-    })
     return (
-        <div className="card-container">
-            <div className="image-container">
-                <img src={cold ? "/cold-bg.jpg" : "/warm-bg.jpg" } alt="aaa" />
-            </div>
+            <div className="card-container">
+                <div className="image-container">
+                {weather.props.main.temp >= 16 ? 
+                    (<img src="/warm-bg.jpg" alt="aaa" />) : 
+                    (<img src="/cold-bg.jpg" alt="aaa" />)}
+                
+                </div>
         
             <div className="text-container">
-                <div className="close-container">
+                <div className="close-container" onClick={removeCard}>
                     <MdOutlineClose/>
                     
                 </div>
                 <div className="city-info">
-                    <h2>Lorem ipsum</h2>
-                    <h4>10.10.2020</h4>
+                    <h2>{weather.props.name}, {weather.props.sys.country}</h2>
+                    <h4>{dateBuilder(new Date())}</h4>
                 </div>
                 <div className="weather-container">
                 <div className="weather-info-container">
-                <p>something:</p>
-                    <p>aaaa</p>
+                <p>Temeperature:</p>
+                    <p>{Math.round(weather.props.main.temp)}&deg;</p>
                 </div>
                 <div className="weather-info-container">
-                <p>something:</p>
-                    <p>aaaa</p>
+                <p>Humidity:</p>
+                    <p>{weather.props.main.humidity}</p>
                 </div>
                 <div className="weather-info-container">
-                    <p>something:</p>
-                    <p>aaaa</p>
+                    <p>Pressure:</p>
+                    <p>{weather.props.main.pressure}</p>
                 </div>
                 <div className="weather-info-container">
-                    <p>something:</p>
-                    <p>aaaa</p>
+                    <p>Weather:</p>
+                    <p>{weather.props.weather[0].description}</p>
                 </div>
                 <div className="weather-info-container">
-                    <p>something:</p>
-                    <p>aaaa</p>
+                    <p>Wind:</p>
+                    <p>{weather.props.wind.speed}km/h</p>
                 </div>
 
                 </div>
@@ -57,7 +65,11 @@ const Card =(props)=>{
 
             </div>
             
-        </div>
+           
+            </div>
+
+        
+        
     )
 
 }
