@@ -9,20 +9,28 @@ export default function Home() {
   }
 
   const [query,setQuery]=useState('');
-  const [town,setTown]=useState('Empty for now...');
-  const [weatherInfo,setWeatherInfo]=useState({});
+  const [town,setTown]=useState('');
+  const [weatherInfo,setWeatherInfo]=useState([]);
 
+  const handleChange =(e)=>{
+    const value  = e.target.value;
+    setQuery(value);
 
+}
 
   const search =(e)=>{
+    const query= e.target.value;
     if(e.key==="Enter"){
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(data=>data.json())
       .then(result => {
+        if(typeof result.main == "undefined"){
+          setWeatherInfo([...weatherInfo]);
+          setTown(query + " not found");
+        }else{
+          setWeatherInfo([...weatherInfo, result]);
+        }
         setQuery('');
-        setWeatherInfo(result);
-
-        setTown(query + " not found");
       })
     }
 
@@ -39,17 +47,21 @@ export default function Home() {
             <input 
               type="text" 
               placeholder="Search town..."
-              onChange={e=>setQuery(e.target.value)}
+              onChange={handleChange}
               value={query}
               onKeyPress={search}
             />
+            <p>{town}</p>
           </div>
         </div>
-       
-        {(typeof weatherInfo.main != "undefined") ? (
            <div className="weather-container">
-              <Card props={weatherInfo}/>
-          </div>) : (<p>{town}</p>)}
+               {weatherInfo.map((weather,index)=>{
+                 return(
+                  <Card props={weather} key={index}/>
+
+                 )
+               })}
+          </div>
 
         
       
