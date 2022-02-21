@@ -40,10 +40,12 @@
             & .input-container{
                 width: 100%;
                 @include univerzalni-flex-display(center, center);
+                flex-direction: column;
                 margin-bottom: 4rem;
 
                 & input{
                     padding: 0.2rem;
+                    margin-bottom: 1rem;
                     width: clamp(200px, 60vw, 300px);
                     outline: none;
 
