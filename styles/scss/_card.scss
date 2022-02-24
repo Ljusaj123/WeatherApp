@@ -1,6 +1,6 @@
 .card-container{
-    width: 45vw;
-    height: 400px; //popraviti za responzivnost
+    width: clamp(550px, 50%, 800px);
+    height: 45vh;
     @include univerzalni-flex-display(center, center);
     border-radius: 15px;
     background: $card-background;
@@ -9,7 +9,7 @@
 
     & .image-container{
         height: 100%;
-        width: 30%;
+        width: clamp(200px, 50%, 300px);
 
         & img{
             border-radius: 15px;
@@ -30,7 +30,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 2.5vw, 2.5rem);
             cursor: pointer;
             color: rgba(218, 131, 131, 0.8);
 
@@ -47,7 +47,13 @@
             flex-direction: column;
             border-bottom: 1px solid $primary-font-color;
             
-            & h2, & h4{
+            & h2{
+                font-size: clamp(1.3rem, 1.5vw, 1.8rem);
+                margin-bottom: 1rem;
+
+            }
+            & h4{
+                font-size: clamp(0.9rem, 1vw, 1.3rem);
                 margin-bottom: 1rem;
 
             }
@@ -55,15 +61,21 @@
 
         & .weather-container{
             width: 100%;
-            padding: 1rem;
+            padding: 0.5rem;
         }
 
         & .weather-info-container{
             width: 100%;
             margin-bottom: 2rem;
             @include univerzalni-flex-display(space-between, center);
+
+            & p{
+                font-size: clamp(0.8rem, 1vw, 1.2rem);;
+
+            }
             
         }
     }
 
 }
+
