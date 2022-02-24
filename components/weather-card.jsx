@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import {MdOutlineClose} from 'react-icons/md';
 
-const Card =({props})=>{
+const Card =({props, funkcija})=>{
 
     const dateBuilder = (d) => {
         let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -14,13 +14,6 @@ const Card =({props})=>{
     
         return `${day} ${date} ${month} ${year}`
       }
-
-      const removeCard=(e)=>{
-          const card=e.target.parentElement.parentElement;
-          card.remove();
-
-      }
-
     return (
             <div className="card-container">
                  <div className="image-container">
@@ -31,7 +24,7 @@ const Card =({props})=>{
                  </div> 
         
               <div className="text-container">
-                 <div className="close-container" onClick={removeCard}>
+                 <div className="close-container" onClick={e => funkcija(e)}>
                      <MdOutlineClose/>
                     
                  </div>
