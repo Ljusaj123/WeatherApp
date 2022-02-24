@@ -54,8 +54,7 @@
             }
             & h4{
                 font-size: clamp(0.9rem, 1vw, 1.3rem);
-                margin-bottom: 1rem;
-
+                margin-bottom: 2rem;
             }
         }
 
@@ -77,5 +76,22 @@
         }
     }
 
+}
+
+@include media-625{
+    .card-container{
+        width: 300px;
+        height: fit-content;
+        flex-direction: column;
+
+        & .image-container{
+            height: 350px;
+            width: 100%;
+        }
+        & .text-container{
+            width: 100%;
+        
+        }
+    }
 }
 
