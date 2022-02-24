@@ -15,20 +15,25 @@ export default function Home() {
   const handleChange =(e)=>{
     const value  = e.target.value;
     setQuery(value);
-
   }
 
   const seeDouble =(result)=>{
     return (weatherInfo.find((a)=> result.name === a.name)!==undefined) ? 1: 0;
   }
 
+  const removeCard =(e)=>{
+    const city=e.target.nextSibling.firstChild.innerHTML;
+    setWeatherInfo(weatherInfo.filter((weather)=> {
+      return weather.name!==city.split(',')[0];
+    }))
+  }
+      
   const search =(e)=>{
     const query= e.target.value;
     if(e.key==="Enter"){
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(data=>data.json())
       .then(result => {
-        console.log(result);
 
         if(typeof result.main == "undefined"){
           setWeatherInfo([...weatherInfo]);
@@ -50,7 +55,6 @@ export default function Home() {
   }
   return (
     <div className="app">
-      {console.log(weatherInfo)}
       <div className="app-container">
         <div className="info-container">
           <div className="title-container">
@@ -71,18 +75,12 @@ export default function Home() {
            <div className="weather-container">
                {weatherInfo.map((weather,index)=>{
                  return(
-                  <Card props={weather} key={index}/>
+                  <Card props={weather} array={weatherInfo} funkcija={removeCard}key={index}/>
 
                  )
                })}
           </div>
-
-        
-      
-
       </div>
-      
-      
     </div>
   )
 }
