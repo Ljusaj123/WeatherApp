@@ -38,11 +38,13 @@ export default function Home() {
         if(typeof result.main == "undefined"){
           setWeatherInfo([...weatherInfo]);
           setTown(query + " not found");
+          setTimeout(()=> setTown(''), 4000);
         }
         else if(seeDouble(result)){
           console.log("aaa");
           setWeatherInfo([...weatherInfo]);
           setTown(query + " already exists");
+          setTimeout(()=> setTown(''), 4000);
 
         }
           else{
