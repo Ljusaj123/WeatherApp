@@ -16,7 +16,11 @@ export default function Home() {
     const value  = e.target.value;
     setQuery(value);
 
-}
+  }
+
+  const seeDouble =(result)=>{
+    return (weatherInfo.find((a)=> result.name === a.name)!==undefined) ? 1: 0;
+  }
 
   const search =(e)=>{
     const query= e.target.value;
@@ -24,10 +28,19 @@ export default function Home() {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(data=>data.json())
       .then(result => {
+        console.log(result);
+
         if(typeof result.main == "undefined"){
           setWeatherInfo([...weatherInfo]);
           setTown(query + " not found");
-        }else{
+        }
+        else if(seeDouble(result)){
+          console.log("aaa");
+          setWeatherInfo([...weatherInfo]);
+          setTown(query + " already exists");
+
+        }
+          else{
           setWeatherInfo([...weatherInfo, result]);
         }
         setQuery('');
@@ -37,6 +50,7 @@ export default function Home() {
   }
   return (
     <div className="app">
+      {console.log(weatherInfo)}
       <div className="app-container">
         <div className="info-container">
           <div className="title-container">
