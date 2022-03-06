@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 body {
   background: #1c1e27;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   color: rgba(173, 190, 209, 0.849);
 }
 
@@ -17,15 +17,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
+  -ms-flex-pack: initial;
+  justify-content: initial;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .app-container .info-container {
@@ -34,15 +34,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
+  -ms-flex-pack: initial;
+  justify-content: initial;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-bottom: 1rem;
 }
 
@@ -61,15 +61,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
+  -ms-flex-pack: initial;
+  justify-content: initial;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .app-container .info-container .title-container h1 {
@@ -87,15 +87,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-bottom: 4rem;
 }
 
@@ -114,7 +114,10 @@ body {
   line-height: 2.5rem;
 }
 
-.app-container .info-container .input-container input::-webkit-input-placeholder {
+.app-container
+  .info-container
+  .input-container
+  input::-webkit-input-placeholder {
   color: rgba(173, 190, 209, 0.849);
 }
 
@@ -130,12 +133,18 @@ body {
   color: rgba(173, 190, 209, 0.849);
 }
 
-.app-container .info-container .input-container [placeholder]::-webkit-input-placeholder {
+.app-container
+  .info-container
+  .input-container
+  [placeholder]::-webkit-input-placeholder {
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
 }
 
-.app-container .info-container .input-container [placeholder]:focus::-webkit-input-placeholder {
+.app-container
+  .info-container
+  .input-container
+  [placeholder]:focus::-webkit-input-placeholder {
   color: transparent;
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
@@ -150,15 +159,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
+  -ms-flex-pack: initial;
+  justify-content: initial;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding: 3rem 0;
 }
 
@@ -169,11 +178,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-radius: 15px;
   background: #03010c;
   margin-bottom: 3rem;
@@ -198,15 +207,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: relative;
 }
 
@@ -229,15 +238,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   border-bottom: 1px solid rgba(173, 190, 209, 0.849);
 }
 
@@ -263,11 +272,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .card-container .text-container .weather-info-container p {
@@ -282,8 +291,8 @@ body {
     height: fit-content;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .card-container .image-container {
     height: 350px;
@@ -298,5 +307,5 @@ body {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
