@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   background: #1c1e27;
   font-family: "Libre Baskerville", serif;
@@ -7,6 +14,7 @@ body {
 
 .app {
   min-height: 100vh;
+  width: 100vw;
   padding: 2rem;
 }
 
@@ -16,141 +24,19 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: initial;
-  -ms-flex-pack: initial;
-  justify-content: initial;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.app-container .info-container {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: initial;
-  -ms-flex-pack: initial;
-  justify-content: initial;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-.app-container .info-container::after {
-  content: "";
-  width: clamp(70%, 80vw, 100%);
-  height: 1px;
-  background: rgba(173, 190, 209, 0.849);
-  opacity: 0.3;
-}
-
-.app-container .info-container .title-container {
-  width: 100%;
-  margin-bottom: 3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: initial;
-  -ms-flex-pack: initial;
-  justify-content: initial;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.app-container .info-container .title-container h1 {
-  font-size: clamp(2.2rem, 6.5vw, 4.5rem);
-  margin-bottom: 2rem;
-}
-
-.app-container .info-container .title-container h3 {
-  font-size: clamp(0.8rem, 1vw, 1.5rem);
-}
-
-.app-container .info-container .input-container {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin-bottom: 4rem;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.app-container .info-container .input-container input {
-  padding: 0.2rem;
-  margin-bottom: 1rem;
-  width: clamp(200px, 60vw, 300px);
-  outline: none;
-  border: none;
-  border-bottom: 1px solid rgba(173, 190, 209, 0.849);
-  border-radius: 5px;
-  background: none;
-  background: rgba(45, 45, 71, 0.548);
-  color: rgba(173, 190, 209, 0.849);
-  font-size: clamp(0.8rem, 3.5vw, 1rem);
-  line-height: 2.5rem;
-}
-
-.app-container
-  .info-container
-  .input-container
-  input::-webkit-input-placeholder {
-  color: rgba(173, 190, 209, 0.849);
-}
-
-.app-container .info-container .input-container input:-ms-input-placeholder {
-  color: rgba(173, 190, 209, 0.849);
-}
-
-.app-container .info-container .input-container input::-ms-input-placeholder {
-  color: rgba(173, 190, 209, 0.849);
-}
-
-.app-container .info-container .input-container input::placeholder {
-  color: rgba(173, 190, 209, 0.849);
-}
-
-.app-container
-  .info-container
-  .input-container
-  [placeholder]::-webkit-input-placeholder {
-  -webkit-transition: color 0.5s ease;
-  transition: color 0.5s ease;
-}
-
-.app-container
-  .info-container
-  .input-container
-  [placeholder]:focus::-webkit-input-placeholder {
-  color: transparent;
-  -webkit-transition: color 0.5s ease;
-  transition: color 0.5s ease;
-}
-
-.app .weather-container {
+.app .weathers-container {
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
@@ -158,17 +44,129 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: initial;
-  -ms-flex-pack: initial;
-  justify-content: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 3rem 0;
+}
+
+.info-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.info-container::after {
+  content: "";
+  width: clamp(70%, 80vw, 100%);
+  height: 1px;
+  background: rgba(173, 190, 209, 0.849);
+  opacity: 0.3;
+}
+
+.info-container .title-container {
+  width: 100%;
+  margin-bottom: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.info-container .title-container h1 {
+  font-size: clamp(2.2rem, 6.5vw, 4.5rem);
+  margin-bottom: 2rem;
+}
+
+.info-container .title-container h3 {
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
+}
+
+.info-container .input-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.info-container .input-container input {
+  padding: 0.2rem;
+  margin-bottom: 1rem;
+  width: clamp(200px, 60vw, 300px);
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(173, 190, 209, 0.849);
+  border-radius: 5px;
+  background: rgba(45, 45, 71, 0.548);
+  color: rgba(173, 190, 209, 0.849);
+  font-size: clamp(0.8rem, 3.5vw, 1rem);
+  line-height: 2.5rem;
+}
+
+.info-container .input-container input::-webkit-input-placeholder {
+  color: rgba(173, 190, 209, 0.849);
+}
+
+.info-container .input-container input:-ms-input-placeholder {
+  color: rgba(173, 190, 209, 0.849);
+}
+
+.info-container .input-container input::-ms-input-placeholder {
+  color: rgba(173, 190, 209, 0.849);
+}
+
+.info-container .input-container input::placeholder {
+  color: rgba(173, 190, 209, 0.849);
+}
+
+.info-container .input-container [placeholder]::-webkit-input-placeholder {
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.info-container .input-container [placeholder]:focus::-webkit-input-placeholder {
+  color: transparent;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
 }
 
 .card-container {
@@ -178,11 +176,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 15px;
   background: #03010c;
   margin-bottom: 3rem;
@@ -207,15 +205,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
 }
 
@@ -238,15 +236,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-bottom: 1px solid rgba(173, 190, 209, 0.849);
 }
 
@@ -265,21 +263,21 @@ body {
   padding: 0.5rem;
 }
 
-.card-container .text-container .weather-info-container {
+.card-container .text-container .weather-container .weather-info-container {
   width: 100%;
   margin-bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.card-container .text-container .weather-info-container p {
+.card-container .text-container .weather-container .weather-info-container p {
   font-size: clamp(0.8rem, 1vw, 1.2rem);
 }
 
@@ -291,8 +289,8 @@ body {
     height: fit-content;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .card-container .image-container {
     height: 350px;
@@ -301,11 +299,4 @@ body {
   .card-container .text-container {
     width: 100%;
   }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
