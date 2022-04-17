@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "../components/weather-card";
+import getWeather from "../APIcalls/getWeather";
 
 export default function Home() {
   const api = {
@@ -34,23 +35,22 @@ export default function Home() {
   const search = (e) => {
     const query = e.target.value;
     if (e.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then((data) => data.json())
-        .then((result) => {
-          if (typeof result.main == "undefined") {
-            setWeatherInfo([...weatherInfo]);
-            setTown(query + " not found");
-            setTimeout(() => setTown(""), 4000);
-          } else if (seeDouble(result)) {
-            console.log("aaa");
-            setWeatherInfo([...weatherInfo]);
+      getWeather(query)
+        .then((data) => {
+          if (seeDouble(data)) {
             setTown(query + " already exists");
             setTimeout(() => setTown(""), 4000);
           } else {
-            setWeatherInfo([...weatherInfo, result]);
+            setWeatherInfo([...weatherInfo, data]);
           }
-          setQuery("");
+        })
+        .catch((error) => {
+          console.log("aaaa");
+          setWeatherInfo([...weatherInfo]);
+          setTown(error.message);
+          setTimeout(() => setTown(""), 4000);
         });
+      setQuery("");
     }
   };
   return (
