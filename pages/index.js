@@ -3,6 +3,7 @@ import Card from "../components/weather-card";
 import getWeather from "../APIcalls/getWeather";
 import seeDoubleFunction from "../utilities/seeDoubleFunction";
 import DataContext from "../contexts/DataContext";
+import Input from "../components/Input";
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -36,27 +37,14 @@ export default function Home() {
         weatherInfo,
         setWeatherInfo,
         town,
-        setTown,
+        query,
+        setQuery,
+        search,
       }}
     >
       <div className="app">
         <div className="app-container">
-          <div className="info-container">
-            <div className="title-container">
-              <h1>Weather App</h1>
-              <h3>Find out the weather in any city </h3>
-            </div>
-            <div className="input-container">
-              <input
-                type="text"
-                placeholder="Search town..."
-                onChange={(e) => setQuery(e.target.value)}
-                value={query}
-                onKeyPress={search}
-              />
-              <p>{town}</p>
-            </div>
-          </div>
+          <Input />
           <div className="weather-container">
             {weatherInfo.map((weather, index) => {
               return <Card weather={weather} key={index} />;
