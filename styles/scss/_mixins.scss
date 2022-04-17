@@ -1,0 +1,11 @@
+@mixin univerzalni-flex-display($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin media-625 {
+  @media screen and (max-width: 625px) {
+    @content;
+  }
+}
