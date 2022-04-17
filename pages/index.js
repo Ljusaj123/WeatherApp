@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Card from "../components/weather-card";
+import Weather from "../components/Weather";
 import getWeather from "../APIcalls/getWeather";
 import seeDoubleFunction from "../utilities/seeDoubleFunction";
 import DataContext from "../contexts/DataContext";
@@ -45,11 +45,7 @@ export default function Home() {
       <div className="app">
         <div className="app-container">
           <Input />
-          <div className="weather-container">
-            {weatherInfo.map((weather, index) => {
-              return <Card weather={weather} key={index} />;
-            })}
-          </div>
+          <Weather />
         </div>
       </div>
     </DataContext.Provider>
