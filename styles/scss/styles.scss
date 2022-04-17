@@ -1,9 +1,5 @@
 @import "config";
+@import "mixins";
 @import "index";
+@import "input";
 @import "card";
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
