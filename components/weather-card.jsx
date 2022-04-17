@@ -1,43 +1,24 @@
-/* eslint-disable @next/next/no-img-element */
+import React, { useContext } from "react";
 import { MdOutlineClose } from "react-icons/md";
+import DataContext from "../contexts/DataContext";
+import dateBuilder from "../utilities/dateBuilder";
 
-const Card = ({ props, funkcija }) => {
-  const dateBuilder = (d) => {
-    let months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
+const Card = ({ weather }) => {
+  const { setWeatherInfo, weatherInfo } = useContext(DataContext);
 
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-
-    return `${day} ${date} ${month} ${year}`;
+  const removeCard = (e) => {
+    const city = e.target.nextSibling.firstChild.innerHTML;
+    setWeatherInfo(
+      weatherInfo.filter((weather) => {
+        return weather.name !== city.split(",")[0];
+      })
+    );
   };
+
   return (
     <div className="card-container">
       <div className="image-container">
-        {props.main.temp >= 16 ? (
+        {weather.main.temp >= 16 ? (
           <img src="/warm-bg.jpg" alt="aaa" />
         ) : (
           <img src="/cold-bg.jpg" alt="aaa" />
@@ -45,35 +26,35 @@ const Card = ({ props, funkcija }) => {
       </div>
 
       <div className="text-container">
-        <div className="close-container" onClick={(e) => funkcija(e)}>
+        <div className="close-container" onClick={(e) => removeCard(e)}>
           <MdOutlineClose />
         </div>
         <div className="city-info">
           <h2>
-            {props.name}, {props.sys.country}
+            {weather.name}, {weather.sys.country}
           </h2>
           <h4>{dateBuilder(new Date())}</h4>
         </div>
         <div className="weather-container">
           <div className="weather-info-container">
             <p>Temeperature:</p>
-            <p>{Math.round(props.main.temp)}&deg;</p>
+            <p>{Math.round(weather.main.temp)}&deg;</p>
           </div>
           <div className="weather-info-container">
             <p>Humidity:</p>
-            <p>{props.main.humidity}</p>
+            <p>{weather.main.humidity}</p>
           </div>
           <div className="weather-info-container">
             <p>Pressure:</p>
-            <p>{props.main.pressure}</p>
+            <p>{weather.main.pressure}</p>
           </div>
           <div className="weather-info-container">
             <p>Weather:</p>
-            <p>{props.weather[0].description}</p>
+            <p>{weather.weather[0].description}</p>
           </div>
           <div className="weather-info-container">
             <p>Wind:</p>
-            <p>{props.wind.speed}km/h</p>
+            <p>{weather.wind.speed}km/h</p>
           </div>
         </div>
       </div>
