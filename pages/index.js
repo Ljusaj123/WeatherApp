@@ -1,27 +1,12 @@
 import React, { useState } from "react";
 import Card from "../components/weather-card";
 import getWeather from "../APIcalls/getWeather";
+import seeDoubleFunction from "../utilities/seeDoubleFunction";
 
 export default function Home() {
-  const api = {
-    key: "f624f11948d4be576b2ea253b7db39b4",
-    base: "https://api.openweathermap.org/data/2.5/",
-  };
-
   const [query, setQuery] = useState("");
   const [town, setTown] = useState("");
   const [weatherInfo, setWeatherInfo] = useState([]);
-
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setQuery(value);
-  };
-
-  const seeDouble = (result) => {
-    return weatherInfo.find((a) => result.name === a.name) !== undefined
-      ? 1
-      : 0;
-  };
 
   const removeCard = (e) => {
     const city = e.target.nextSibling.firstChild.innerHTML;
@@ -37,7 +22,7 @@ export default function Home() {
     if (e.key === "Enter") {
       getWeather(query)
         .then((data) => {
-          if (seeDouble(data)) {
+          if (seeDoubleFunction(data, weatherInfo)) {
             setTown(query + " already exists");
             setTimeout(() => setTown(""), 4000);
           } else {
@@ -65,7 +50,7 @@ export default function Home() {
             <input
               type="text"
               placeholder="Search town..."
-              onChange={handleChange}
+              onChange={(e) => setQuery(e.target.value)}
               value={query}
               onKeyPress={search}
             />
