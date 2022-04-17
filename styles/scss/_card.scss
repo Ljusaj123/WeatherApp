@@ -56,15 +56,15 @@
     & .weather-container {
       width: 100%;
       padding: 0.5rem;
-    }
 
-    & .weather-info-container {
-      width: 100%;
-      margin-bottom: 2rem;
-      @include univerzalni-flex-display(space-between, center);
+      & .weather-info-container {
+        width: 100%;
+        margin-bottom: 2rem;
+        @include univerzalni-flex-display(space-between, center);
 
-      & p {
-        font-size: clamp(0.8rem, 1vw, 1.2rem);
+        & p {
+          font-size: clamp(0.8rem, 1vw, 1.2rem);
+        }
       }
     }
   }
