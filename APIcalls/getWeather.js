@@ -7,13 +7,11 @@ const getWeather = async (query) => {
     `${api.base}weather?q=${query}&units=metric&APPID=${api.key}`
   );
 
-  if (call.status === 404) {
-    const message = `${query} has not found`;
-    throw new Error(message);
-  } 
-    const result = await call.json();
-    return result;
-  
+  if (!call.ok) {
+    throw new Error(`${query} has not found`);
+  }
+  const result = await call.json();
+  return result;
 };
 
 export default getWeather;

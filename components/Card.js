@@ -6,11 +6,10 @@ import dateBuilder from "../utilities/dateBuilder";
 const Card = ({ weather }) => {
   const { setWeatherInfo, weatherInfo } = useContext(DataContext);
 
-  const removeCard = (e) => {
-    const city = e.target.nextSibling.firstChild.innerHTML;
+  const removeCard = () => {
     setWeatherInfo(
-      weatherInfo.filter((weather) => {
-        return weather.name !== city.split(",")[0];
+      weatherInfo.filter((w) => {
+        return w.id !== weather.id;
       })
     );
   };
@@ -26,16 +25,16 @@ const Card = ({ weather }) => {
       </div>
 
       <div className="text-container">
-        <div className="close-container" onClick={(e) => removeCard(e)}>
+        <div className="close-container" onClick={() => removeCard()}>
           <MdOutlineClose />
         </div>
-        <div className="city-info">
-          <h2>
+        <div className="city-info container">
+          <h3>
             {weather.name}, {weather.sys.country}
-          </h2>
+          </h3>
           <h4>{dateBuilder(new Date())}</h4>
         </div>
-        <div className="weather-container">
+        <div className="weather container">
           <div className="weather-info-container">
             <p>Temeperature:</p>
             <p>{Math.round(weather.main.temp)}&deg;</p>

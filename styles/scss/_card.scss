@@ -1,30 +1,30 @@
 .card-container {
-  width: clamp(550px, 50%, 800px);
-  height: 45vh;
+  width: clamp(600px, 70%, 800px);
+  height: 55vh;
   @include univerzalni-flex-display(center, center);
   border-radius: 15px;
   background: $card-background;
   margin-bottom: 3rem;
 
-  & .image-container {
+  .image-container {
     height: 100%;
     width: clamp(200px, 50%, 300px);
 
-    & img {
+    img {
       border-radius: 15px;
       height: 100%;
       width: 100%;
     }
   }
-  & .text-container {
+  .text-container {
     width: 70%;
     height: 100%;
-    padding: 1rem;
+    padding: 2rem;
     @include univerzalni-flex-display(space-between, center);
     flex-direction: column;
     position: relative;
 
-    & .close-container {
+    .close-container {
       position: absolute;
       top: 10px;
       right: 10px;
@@ -32,40 +32,24 @@
       cursor: pointer;
       color: rgba(218, 131, 131, 0.8);
 
-      & svg {
+      svg {
         pointer-events: none;
       }
     }
-
-    & .city-info {
+    .container {
       width: 100%;
+      padding: 1rem;
+    }
+
+    .city-info {
       @include univerzalni-flex-display(center, center);
       flex-direction: column;
       border-bottom: 1px solid $primary-font-color;
-
-      & h2 {
-        font-size: clamp(1.3rem, 1.5vw, 1.8rem);
-        margin-bottom: 1rem;
-      }
-      & h4 {
-        font-size: clamp(0.9rem, 1vw, 1.3rem);
-        margin-bottom: 2rem;
-      }
     }
 
-    & .weather-container {
-      width: 100%;
-      padding: 0.5rem;
-
-      & .weather-info-container {
-        width: 100%;
-        margin-bottom: 2rem;
-        @include univerzalni-flex-display(space-between, center);
-
-        & p {
-          font-size: clamp(0.8rem, 1vw, 1.2rem);
-        }
-      }
+    .weather .weather-info-container {
+      margin-bottom: 2rem;
+      @include univerzalni-flex-display(space-between, center);
     }
   }
 }
@@ -76,11 +60,11 @@
     height: fit-content;
     flex-direction: column;
 
-    & .image-container {
+    .image-container {
       height: 350px;
       width: 100%;
     }
-    & .text-container {
+    .text-container {
       width: 100%;
     }
   }

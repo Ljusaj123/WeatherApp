@@ -6,8 +6,10 @@ function Weather() {
   const { weatherInfo } = useContext(DataContext);
   return (
     <div className="weathers-container">
-      {weatherInfo.map((weather, index) => {
-        return <Card weather={weather} key={index} />;
+      {weatherInfo.map((weather) => {
+        const { id } = weather;
+        console.log(weather);
+        return <Card weather={weather} key={id} />;
       })}
     </div>
   );
