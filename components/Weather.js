@@ -8,7 +8,6 @@ function Weather() {
     <div className="weathers-container">
       {weatherInfo.map((weather) => {
         const { id } = weather;
-        console.log(weather);
         return <Card weather={weather} key={id} />;
       })}
     </div>
