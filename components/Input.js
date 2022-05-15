@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import getWeather from "../APIcalls/getWeather";
 import seeDoubleFunction from "../utilities/seeDoubleFunction";
 import DataContext from "../contexts/DataContext";
-import { Spinner } from "react-spinner-animated";
+import { HalfMalf } from "react-spinner-animated";
 import Header from "./Header";
 
 import "react-spinner-animated/dist/index.css";
@@ -41,7 +41,14 @@ function Input() {
   };
 
   if (isLoading) {
-    return <Spinner text={"Loading..."} width={"150px"} height={"150px"} />;
+    return (
+      <HalfMalf
+        text={"Loading..."}
+        center={true}
+        width={"150px"}
+        height={"150px"}
+      />
+    );
   }
   return (
     <div className="info-container">
