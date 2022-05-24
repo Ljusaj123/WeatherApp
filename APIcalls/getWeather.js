@@ -1,6 +1,7 @@
 const getWeather = async (query) => {
+  console.log(process.env.REACT_APP_KEY);
   const api = {
-    key: "f624f11948d4be576b2ea253b7db39b4",
+    key: process.env.NEXT_PUBLIC_KEY,
     base: "https://api.openweathermap.org/data/2.5/",
   };
   const call = await fetch(
